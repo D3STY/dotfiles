@@ -14,8 +14,17 @@ antigen bundle zpm-zsh/autoenv
 export PATH="$HOME/.npm/node_modules/bin/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin/:$PATH"
-eval $(dircolors ~/.dir_colors)
-export EDITOR=nano
+export GLPATH="/glftpd/"
+export SLPATH="$HOME/sl2cb/"
+export CBPATH="$HOME/cbftp"
+export BOTPATH="$GLPATH/sitebot/"
+
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='nano'
+ else
+   export EDITOR='code --wait'
+ fi
+
 
 alias root='sudo -s'
 alias cksfv='cksfv -f *.sfv'
@@ -32,6 +41,8 @@ alias grep='grep --color=auto'
 alias mount='mount |column -t'
 alias ports="sudo netstat -taupln | grep LISTEN"
 alias netstat="sudo netstat"
+
+eval $(dircolors ~/.dir_colors)
 
 # Load the theme
 antigen theme spaceship-prompt/spaceship-prompt
