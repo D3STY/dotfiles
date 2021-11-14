@@ -1,0 +1,24 @@
+Host raspi
+  Hostname raspi.desty.ovh
+  ProxyJump rtm
+
+Host rtm
+  Hostname rtm.mutiny.ovh
+  User mutiny
+  Port 25251
+
+Host rpi
+  Hostname raspi.fritz.box
+  User pi
+  Port 1312
+
+Host swt
+  Hostname switch.fritz.box
+  KexAlgorithms diffie-hellman-group-exchange-sha1
+  User desty
+
+Host *
+  AddKeysToAgent yes
+  ForwardAgent yes
+  ForwardX11 yes
+  IdentityFile ~/.ssh/id_ed25519_chromebook
