@@ -45,7 +45,10 @@ antigen bundle chrissicool/zsh-256color
 antigen bundle hlissner/zsh-autopair
 antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
 antigen bundle zpm-zsh/autoenv
+antigen bundle unixorn/fzf-zsh-plugin
 antigen bundle unixorn/autoupdate-antigen.zshplugin
+antigen bundle Aloxaf/fzf-tab
+antigen bundle z-shell/zsh-cmd-architect
 
 antigen theme spaceship-prompt/spaceship-prompt
 antigen apply
