@@ -1,9 +1,15 @@
-mnt() { mount | awk -F' ' "{ printf \"%s\t%s\n\",\$1,\$3; }" | column -t | egrep ^/dev/ | sort }
-rm_rf() { devnull rm -Rf "$@"; }
-cp_rf() { if [ -e "$1" ]; then devnull cp -Rfa "$@"; fi; }
-mv_f() { if [ -e "$1" ]; then devnull mv -f "$@"; fi; }
-ln_rm() { devnull find "$HOME" -xtype l -delete; }
-ln_sf() {
-  devnull ln -sf "$@"
-  ln_rm
-}
+alias root='sudo -s'
+alias cksfv='cksfv -f *.sfv'
+alias mksfv='cksfv -b'
+alias rescn='srr.py *.srr; rm -y *.mkv *.srr'
+
+alias update='sudo apt update'
+alias upgradable='sudo apt list --upgradable'
+alias upgrade='sudo apt update && sudo apt -y upgrade'
+alias dist-upgrade='sudo apt dist-upgrade -y'
+alias full-upgrade='sudo apt full-upgrade -y'
+alias aptinstall='sudo apt install -y'
+alias grep='grep --color=auto'
+alias mount='mount |column -t'
+alias ports="sudo netstat -taupln | grep LISTEN"
+alias netstat="sudo netstat"
