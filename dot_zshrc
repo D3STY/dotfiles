@@ -29,14 +29,12 @@ antigen bundle colorize
 antigen bundle screen
 antigen bundle virtualenv
 antigen bundle pip
-antigen bundle safe-paste
 antigen bundle common-aliases
 antigen bundle colored-man-pages
 antigen bundle command-not-found
 antigen bundle nmap
 antigen bundle notify
 antigen bundle ufw
-antigen bundle compleat
 antigen bundle systemadmin
 antigen bundle encode64
 antigen bundle history
