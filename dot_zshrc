@@ -1,6 +1,22 @@
 source /usr/share/zsh-antigen/antigen.zsh
-antigen use oh-my-zsh
+source $HOME/.aliases.zsh
+source $HOME/.functions.zsh
+eval $(dircolors ~/.dir_colors)
+export PATH="$HOME/.npm/node_modules/bin/:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin/:$PATH"
+export GLPATH="/glftpd/"
+export SLPATH="$HOME/sl2cb/"
+export CBPATH="$HOME/cbftp"
+export BOTPATH="$GLPATH/sitebot/"
 
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='nano'
+ else
+   export EDITOR='code --wait'
+ fi
+
+antigen use oh-my-zsh
 antigen bundle sudo
 antigen bundle debian
 antigen bundle extract
@@ -27,11 +43,8 @@ antigen bundle history
 antigen bundle history-substring-search
 antigen bundle python
 antigen bundle perl
-antigen bundle sudo
 antigen bundle zui
 antigen bundle tmux
-antigen bundle docker
-
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
@@ -40,42 +53,7 @@ antigen bundle chrissicool/zsh-256color
 antigen bundle hlissner/zsh-autopair
 antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
 antigen bundle zpm-zsh/autoenv
+antigen bundle unixorn/autoupdate-antigen.zshplugin
 
-export PATH="$HOME/.npm/node_modules/bin/:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/bin/:$PATH"
-export GLPATH="/glftpd/"
-export SLPATH="$HOME/sl2cb/"
-export CBPATH="$HOME/cbftp"
-export BOTPATH="$GLPATH/sitebot/"
-
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='nano'
- else
-   export EDITOR='code --wait'
- fi
-
-
-alias root='sudo -s'
-alias cksfv='cksfv -f *.sfv'
-alias mksfv='cksfv -b'
-alias rescn='srr.py *.srr; rm -y *.mkv *.srr'
-
-alias update='sudo apt update'
-alias upgradable='sudo apt list --upgradable'
-alias upgrade='sudo apt update && sudo apt -y upgrade'
-alias dist-upgrade='sudo apt dist-upgrade -y'
-alias full-upgrade='sudo apt full-upgrade -y'
-alias aptinstall='sudo apt install -y'
-alias grep='grep --color=auto'
-alias mount='mount |column -t'
-alias ports="sudo netstat -taupln | grep LISTEN"
-alias netstat="sudo netstat"
-
-eval $(dircolors ~/.dir_colors)
-
-# Load the theme
 antigen theme spaceship-prompt/spaceship-prompt
-
-# Tell antigen that you're done
 antigen apply
