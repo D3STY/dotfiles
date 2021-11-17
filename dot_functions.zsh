@@ -7,3 +7,4 @@ ln_sf() {
   devnull ln -sf "$@"
   ln_rm
 }
+tor() { cd ~/tor_browser_de; ./start-tor-browser.desktop; cd ..; }
