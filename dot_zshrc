@@ -17,6 +17,7 @@ export BOTPATH="$GLPATH/sitebot/"
  fi
 
 antigen use oh-my-zsh
+antigen bundle ssh-agent
 antigen bundle sudo
 antigen bundle debian
 antigen bundle systemd
