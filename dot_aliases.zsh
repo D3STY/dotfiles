@@ -3,6 +3,7 @@ alias cksfv='cksfv -f *.sfv'
 alias mksfv='cksfv -b'
 alias rescn='srr.py *.srr; rm -y *.mkv *.srr'
 
+alias python='paython3'
 alias update='sudo apt update'
 alias upgradable='sudo apt list --upgradable'
 alias upgrade='sudo apt update && sudo apt -y upgrade'
